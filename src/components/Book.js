@@ -5,7 +5,7 @@ function Book({
   category, title, author, percentageCompleted, currentChapter,
 }) {
   return (
-    <div>
+    <>
       <div>
         <h2>{title}</h2>
         <p>{author}</p>
@@ -33,7 +33,7 @@ function Book({
         <button>UPDATE PROGRESS</button>
       </div>
       <hr />
-    </div>
+    </>
   );
 }
 
