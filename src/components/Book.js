@@ -1,8 +1,8 @@
-/* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Book({
-  category, title, author, percentageCompleted, currentChapter,
+  title, author, percentageCompleted, currentChapter,
 }) {
   return (
     <>
@@ -10,9 +10,9 @@ function Book({
         <h2>{title}</h2>
         <p>{author}</p>
         <div>
-          <button type="buttuon">Comments</button>
-          <button type="buttuon">Remove</button>
-          <button type="buttuon">Edit</button>
+          <button type="button">Comments</button>
+          <button type="button">Remove</button>
+          <button type="button">Edit</button>
         </div>
       </div>
       <div>
@@ -30,11 +30,24 @@ function Book({
           {' '}
           {currentChapter}
         </h4>
-        <button>UPDATE PROGRESS</button>
+        <button type="button">UPDATE PROGRESS</button>
       </div>
       <hr />
     </>
   );
 }
 
+Book.defaultProps = {
+  title: '',
+  author: '',
+  percentageCompleted: 0,
+  currentChapter: 0,
+};
+
+Book.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  percentageCompleted: PropTypes.number,
+  currentChapter: PropTypes.number,
+};
 export default Book;
