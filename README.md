@@ -2,7 +2,7 @@
 
 # Bookstore App with React
 
-> The Bookstore is a website to display a list of books, add a book and remove a selected book.
+> The Bookstore App is a website created to display a list of books, users can add a book and also remove selected book(s).
 
 ## Built With
 
