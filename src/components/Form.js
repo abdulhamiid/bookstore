@@ -7,7 +7,7 @@ function Form() {
       <form>
         <input type="text" placeholder="Book itle" />
         <input type="text" placeholder="Author" />
-        <input type="submit" />
+        <button type="submit">Add Book</button>
       </form>
     </>
 
