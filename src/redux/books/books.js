@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 // Actions
 
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
@@ -18,7 +18,7 @@ export default function bookReducer(state = [], action) {
 
     case REMOVE_BOOK:
       return state.filter((item) => action.id !== item.id);
-      
+
     default:
       return state;
   }
