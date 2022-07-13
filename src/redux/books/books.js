@@ -11,7 +11,7 @@ export default function bookReducer(state = [], action) {
       return [
         ...state,
         {
-          id: uuidv4(),
+          id: action.id,
           book: action.book,
         },
       ];
