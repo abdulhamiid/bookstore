@@ -1,11 +1,35 @@
 import { v4 as uuidv4 } from 'uuid';
-// Actions
 
+// Actions
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/ADD_BOOK';
 
+export const allBooks = [
+  {
+    id: uuidv4(),
+    book: {
+      title: 'The Hunger Games',
+      author: 'Suzanne Collins',
+    },
+  },
+  {
+    id: uuidv4(),
+    book: {
+      title: 'Dune',
+      author: 'Frank Herbert',
+    },
+  },
+  {
+    id: uuidv4(),
+    book: {
+      title: 'Capital in the Twenty-First Century',
+      author: 'Suzanne Collins',
+    },
+  },
+];
+
 // Reducer
-export default function bookReducer(state = [], action) {
+export default function bookReducer(state = allBooks, action) {
   switch (action.type) {
     case ADD_BOOK:
       return [
