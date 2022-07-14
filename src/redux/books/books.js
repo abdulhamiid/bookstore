@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 // Actions
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 export const allBooks = [
   {
@@ -41,7 +41,7 @@ export default function bookReducer(state = allBooks, action) {
       ];
 
     case REMOVE_BOOK:
-      return state.filter((item) => action.id !== item.id);
+      return state.filter((item) => item.id !== action.id);
 
     default:
       return state;
