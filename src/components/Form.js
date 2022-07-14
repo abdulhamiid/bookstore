@@ -11,11 +11,13 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook(book));
-    setBook({
-      title: '',
-      author: '',
-    });
+    if (book.title.trim() || book.author.trim()) {
+      dispatch(addBook(book));
+      setBook({
+        title: '',
+        author: '',
+      });
+    }
   };
 
   const handleTitle = (e) => {
