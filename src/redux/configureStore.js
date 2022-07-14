@@ -4,7 +4,7 @@ import bookReducer from './books/books';
 import categoryReducer from './categories/categories';
 
 const rootReducer = combineReducers({
-  book: bookReducer,
+  allBooks: bookReducer,
   category: categoryReducer,
 });
 
