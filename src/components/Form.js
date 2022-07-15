@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux/es/exports';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBookStore } from '../redux/books/books';
 
-export const bookData = {
-  item_id: uuidv4(),
+const bookData = {
   title: '',
   author: '',
   category: 'Action',
@@ -16,7 +15,7 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (book.title.trim() && book.author.trim()) {
-      dispatch(addBook(book));
+      dispatch(addBookStore(book));
       setBook({
         item_id: '',
         title: '',
@@ -30,6 +29,7 @@ function Form() {
     setBook({
       ...book,
       title: e.target.value,
+      item_id: uuidv4(),
     });
   };
 
@@ -41,7 +41,6 @@ function Form() {
   };
 
   const handleSelect = (e) => {
-    console.log(e.target.value);
     setBook({
       ...book,
       category: e.target.value,
