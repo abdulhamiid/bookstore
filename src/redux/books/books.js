@@ -1,32 +1,11 @@
-import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 
 // Actions
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const GET_BOOKS = 'bookstore/books/GET_BOOKS';
 
-export const allBooks = [
-  {
-    id: uuidv4(),
-    book: {
-      title: 'The Hunger Games',
-      author: 'Suzanne Collins',
-    },
-  },
-  {
-    id: uuidv4(),
-    book: {
-      title: 'Dune',
-      author: 'Frank Herbert',
-    },
-  },
-  {
-    id: uuidv4(),
-    book: {
-      title: 'Capital in the Twenty-First Century',
-      author: 'Suzanne Collins',
-    },
-  },
-];
+const allBooks = [];
 
 // Reducer
 export default function bookReducer(state = allBooks, action) {
@@ -34,14 +13,15 @@ export default function bookReducer(state = allBooks, action) {
     case ADD_BOOK:
       return [
         ...state,
-        {
-          id: action.id,
-          book: action.book,
-        },
+        action.payload,
       ];
 
     case REMOVE_BOOK:
-      return state.filter((item) => item.id !== action.id);
+      return state.filter((item) => item.item_id !== action.payload.item_id);
+
+    case GET_BOOKS: {
+      return action.payload;
+    }
 
     default:
       return state;
@@ -49,17 +29,57 @@ export default function bookReducer(state = allBooks, action) {
 }
 
 // Action Creators
-export function addBook(book) {
-  return {
-    type: ADD_BOOK,
-    id: uuidv4(),
-    book,
-  };
-}
+const fetch = (books) => ({
+  type: GET_BOOKS,
+  payload: books,
+});
 
-export function removeBook(id) {
-  return {
-    type: REMOVE_BOOK,
-    id,
-  };
-}
+// baseUrl
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/T0lJq4hePa59qV5pJzMe/books';
+
+export const fetchBook = () => async (dispatch) => {
+  const response = await axios.get(url);
+  const booksFetched = Object.entries(response.data).map((item) => {
+    const {
+      title, author, category,
+    } = item[1][0];
+    return {
+      item_id: item[0],
+      title,
+      author,
+      category,
+    };
+  });
+  dispatch(fetch(booksFetched));
+};
+
+export const addBook = (book) => ({
+  type: ADD_BOOK,
+  payload: {
+    item_id: book.item_id,
+    title: book.title,
+    author: book.author,
+    category: book.category,
+  },
+});
+
+export const addBookStore = (book) => async (dispatch) => {
+  await axios.post(url, book, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  dispatch(addBook(book));
+};
+
+export const removeBook = (id) => ({
+  type: REMOVE_BOOK,
+  payload: {
+    item_id: id,
+  },
+});
+
+export const removeBookStore = (id) => async (dispatch) => {
+  await axios.delete(`${url}/${id}`);
+  dispatch(removeBook(id));
+};
