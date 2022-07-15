@@ -55,7 +55,7 @@ function Form() {
         <input type="text" placeholder="Author" value={book.author} onChange={handleAuthor} />
         <select value={book.category} onChange={handleSelect}>
           <option value="Action">Action</option>
-          <option value="Science Fction">Science Fiction</option>
+          <option value="Science Fiction">Science Fiction</option>
           <option value="Economy">Economy</option>
         </select>
         <button type="submit">Add Book</button>
