@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux/es/exports';
-import { removeBook } from '../redux/books/books';
+import { removeBookStore } from '../redux/books/books';
 
 function Book({
   category, title, author, percentageCompleted, currentChapter, id,
@@ -9,7 +9,7 @@ function Book({
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
-    dispatch(removeBook(id));
+    dispatch(removeBookStore(id));
   };
   return (
     <div>
