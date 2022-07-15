@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux/es/exports';
-import { removeBook } from '../redux/books/books';
+import { removeBookStore } from '../redux/books/books';
 
 function Book({
-  title, author, percentageCompleted, currentChapter, id,
+  category, title, author, percentageCompleted, currentChapter, id,
 }) {
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
-    dispatch(removeBook(id));
+    dispatch(removeBookStore(id));
   };
   return (
     <div>
       <div>
+        <p>{category}</p>
         <h2>{title}</h2>
         <p>{author}</p>
         <div>
@@ -45,6 +46,7 @@ function Book({
 }
 
 Book.defaultProps = {
+  category: '',
   title: '',
   author: '',
   percentageCompleted: 64,
@@ -53,6 +55,7 @@ Book.defaultProps = {
 };
 
 Book.propTypes = {
+  category: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
   percentageCompleted: PropTypes.number,
