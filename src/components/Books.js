@@ -10,7 +10,13 @@ function Books() {
     <main>
       <section>
         {books.map((bk) => (
-          <Book title={bk.book.title} author={bk.book.author} key={bk.id} id={bk.id} />
+          <Book
+            category={bk.book.category}
+            title={bk.book.title}
+            author={bk.book.author}
+            key={bk.id}
+            id={bk.id}
+          />
         ))}
       </section>
       <section>
