@@ -1,33 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Roboto+Slab:wght@300;400&display=swap');
 
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -53,7 +25,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #fff;
   border-bottom: 1px solid #e8e8e8;
 }
@@ -62,10 +34,17 @@ nav > div {
   display: flex;
   gap: 0 40px;
 }
+
 nav ul {
   display: flex;
   gap: 0 40px;
   align-items: center;
+}
+
+h1 a {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0290ff;
 }
 
 nav li {
@@ -82,12 +61,6 @@ nav li a:visited {
   opacity: 1;
 }
 
-h1 a{
-  font-size: 30px;
-  font-weight: 700;
-  color:#0290ff;
-}
-
 #user {
   width: 50px;
   height: 50px;
@@ -98,14 +71,16 @@ h1 a{
   align-items: center;
   border-radius: 50%;
 }
+
 #user svg {
-  color:#0290ff;
+  color: #0290ff;
   font-size: 23px;
 }
 
-#user svg:hover{
+#user svg:hover {
   cursor: pointer;
 }
+
 main {
   margin: auto;
   padding: 40px;
@@ -119,7 +94,7 @@ main > div {
 }
 
 h2 {
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   font-size: 23px;
 }
 
@@ -129,6 +104,7 @@ h2 {
   background-color: rgba(18, 18, 18, 0.5);
   opacity: 0.2;
 }
+
 .book {
   background-color: #fff;
   border: 1px solid #e8e8e8;
@@ -150,10 +126,10 @@ h2 {
   border: none;
   border-right: 1px solid #4386bf;
   color: #4386bf;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   background-color: #fff;
   font-size: 15px;
-  padding: 0 20px; 
+  padding: 0 20px;
   font-weight: 300;
 }
 
@@ -166,28 +142,28 @@ h2 {
 }
 
 .book-title {
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #121212;
   opacity: 0.5;
   font-weight: 600;
 }
 
 .book-author {
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   color: #4386bf;
   font-weight: 300;
 }
 
 .book-chapter {
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   color: #121212;
   font-weight: 200;
 }
 
-.book-chapter button {
+.chapter-btn {
   background-color: #0290ff;
   color: #fff;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   padding: 8px 20px;
   border-radius: 3px;
   font-size: 15px;
@@ -197,7 +173,7 @@ h2 {
 }
 
 .book-chapter > h4 {
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   font-size: 16px;
   color: #000;
   font-weight: 400;
@@ -205,7 +181,7 @@ h2 {
 }
 
 .book-progress {
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
   gap: 0 20px;
@@ -247,7 +223,7 @@ h2 {
   color: red;
 }
 
-form {
+#form {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -257,24 +233,25 @@ form {
   margin: 25px 0;
   border: 1px solid rgba(18, 18, 18, 0.1);
 }
+
 .form > h2 {
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 15px;
   opacity: 0.5;
 }
 
-form input {
+#form input {
   padding: 10px 15px;
   border-radius: 4px;
   width: 30%;
   border: 1px solid #ccc;
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
 
-form button {
+#form button {
   background-color: #0290ff;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   font-size: 17px;
   padding: 10px 15px;
   width: 20%;
@@ -283,12 +260,12 @@ form button {
   border-radius: 4px;
 }
 
-form select {
+#form select {
   width: 20%;
   font-size: 18px;
   border: 1px solid #ccc;
   padding: 10px;
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* category */
@@ -296,7 +273,7 @@ form select {
   width: 15%;
   margin: 50px;
   background-color: #0290ff;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   font-size: 17px;
   padding: 10px 15px;
   color: #fff;

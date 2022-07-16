@@ -42,7 +42,7 @@ function Book({
             {' '}
             {currentChapter}
           </h4>
-          <button type="button">UPDATE PROGRESS</button>
+          <button type="button" className="chaper-btn">UPDATE PROGRESS</button>
         </div>
       </div>
     </div>
