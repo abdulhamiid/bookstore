@@ -290,3 +290,20 @@ form select {
   padding: 10px;
   font-family: "Montserrat",sans-serif;
 }
+
+/* category */
+.status {
+  width: 15%;
+  margin: 50px;
+  background-color: #0290ff;
+  font-family: "Roboto Slab",serif;
+  font-size: 17px;
+  padding: 10px 15px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.status:hover {
+  cursor: pointer;
+}
