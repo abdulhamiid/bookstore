@@ -12,35 +12,39 @@ function Book({
     dispatch(removeBookStore(id));
   };
   return (
-    <div>
-      <div>
-        <p>{category}</p>
+    <div className="book">
+      <div className="bk-about">
+        <p className="book-title">{category}</p>
         <h2>{title}</h2>
-        <p>{author}</p>
-        <div>
+        <p className="book-author">{author}</p>
+        <div className="action-btn">
           <button type="button">Comments</button>
           <button type="button" onClick={() => handleRemove(id)}>Remove</button>
           <button type="button">Edit</button>
         </div>
       </div>
-      <div>
-        <img src="" alt="" />
-        <p>
-          {percentageCompleted}
-          %
-        </p>
-        <small>Completed</small>
+      <div className="book-info">
+        <div className="book-progress">
+          <div className="progress" />
+          <div>
+            <p>
+              {percentageCompleted}
+              %
+            </p>
+            <small>Completed</small>
+          </div>
+        </div>
+        <div className="hr" />
+        <div className="book-chapter">
+          <p>CURRENT CHAPTER</p>
+          <h4>
+            Chapter
+            {' '}
+            {currentChapter}
+          </h4>
+          <button type="button">UPDATE PROGRESS</button>
+        </div>
       </div>
-      <div>
-        <p>CURRENT CHAPTER</p>
-        <h4>
-          Chapter
-          {' '}
-          {currentChapter}
-        </h4>
-        <button type="button">UPDATE PROGRESS</button>
-      </div>
-      <hr />
     </div>
   );
 }
