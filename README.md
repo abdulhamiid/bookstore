@@ -10,6 +10,8 @@
 - Functional components using Hooks
 - Linters
 
+## Live Demo
+[View project](https://frolicking-hummingbird-04c251.netlify.app)
 
 ## Getting Started
 
