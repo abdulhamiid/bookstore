@@ -51,8 +51,8 @@ function Form() {
     <>
       <h2>ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Book title" value={book.title} onChange={handleTitle} />
-        <input type="text" placeholder="Author" value={book.author} onChange={handleAuthor} />
+        <input type="text" placeholder="Book title" className="bk-title" value={book.title} onChange={handleTitle} />
+        <input type="text" placeholder="Author" className="bk-author" value={book.author} onChange={handleAuthor} />
         <select value={book.category} onChange={handleSelect}>
           <option value="Action">Action</option>
           <option value="Science Fiction">Science Fiction</option>
