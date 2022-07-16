@@ -14,20 +14,23 @@ function Books() {
 
   return (
     <main>
-      <section>
-        {books.map((bk) => (
-          <Book
-            category={bk.category}
-            title={bk.title}
-            author={bk.author}
-            key={bk.item_id}
-            id={bk.item_id}
-          />
-        ))}
-      </section>
-      <section>
-        <Form />
-      </section>
+      <div>
+        <section>
+          {books.map((bk) => (
+            <Book
+              category={bk.category}
+              title={bk.title}
+              author={bk.author}
+              key={bk.item_id}
+              id={bk.item_id}
+            />
+          ))}
+        </section>
+        <section className="form">
+          <hr />
+          <Form />
+        </section>
+      </div>
     </main>
   );
 }
