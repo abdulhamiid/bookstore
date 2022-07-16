@@ -9,7 +9,7 @@ function Categories() {
   };
   return (
     <>
-      <button type="button" onClick={handleClick}>Check Status</button>
+      <button type="button" onClick={handleClick} className="status">Check Status</button>
     </>
   );
 }
