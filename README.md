@@ -11,7 +11,10 @@
 - Linters
 
 ## Live Demo
-[View project](https://frolicking-hummingbird-04c251.netlify.app)
+[View project](https://stirring-stardust-866bb1.netlify.app/)
+
+## App Screenshot 
+![screenshot](./src/img/bookstore.png)
 
 ## Getting Started
 
@@ -19,8 +22,14 @@ To get a local copy up and running follow these simple example steps.
 
 ### Clone this repository
 
+Run this command
 ```
-https://github.com/abdulhamiid/bookstore.git
+git clone https://github.com/abdulhamiid/bookstore.git
+```
+
+Navigate to the project directory
+```
+cd bookstore
 ```
 
 ## Basic Setup
