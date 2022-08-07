@@ -11,7 +11,10 @@
 - Linters
 
 ## Live Demo
-[View project](https://frolicking-hummingbird-04c251.netlify.app)
+[View project](https://stirring-stardust-866bb1.netlify.app/)
+
+## App Screenshot 
+![screenshot](./src/img/bookstore.png)
 
 ## Getting Started
 
@@ -19,8 +22,14 @@ To get a local copy up and running follow these simple example steps.
 
 ### Clone this repository
 
+Run this command
 ```
-https://github.com/abdulhamiid/bookstore.git
+git clone https://github.com/abdulhamiid/bookstore.git
+```
+
+Navigate to the project directory
+```
+cd bookstore
 ```
 
 ## Basic Setup
@@ -29,10 +38,20 @@ https://github.com/abdulhamiid/bookstore.git
 ```
 npm install
 ```
+## Available Scripts
 
-### Deployment
+In the project directory, you can run:
 
-Run ```npm start```
+### 
+```
+npm start
+```
+
+Runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.
+
 
 ## Author
 
@@ -54,9 +73,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thanks to microverse
 
 
 ## 📝 License
